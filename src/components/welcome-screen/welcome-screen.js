@@ -3,6 +3,7 @@ import logo from '../../assets/img/melody-logo.png'
 
 export default class extends Component {
     render() {
+        const { time, error } = this.props;
         return (
             <section className="welcome">
                 <div className="welcome__logo">
@@ -12,8 +13,8 @@ export default class extends Component {
                 <h2 className="welcome__rules-title">Правила игры</h2>
                 <p className="welcome__text">Правила просты:</p>
                 <ul className="welcome__rules-list">
-                    <li>За 5 минут нужно ответить на все вопросы.</li>
-                    <li>Можно допустить 3 ошибки.</li>
+                    <li>За {time} минут нужно ответить на все вопросы.</li>
+                    <li>Можно допустить {error} ошибки.</li>
                 </ul>
                 <p className="welcome__text">Удачи!</p>
             </section>

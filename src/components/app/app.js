@@ -5,7 +5,7 @@ export default class extends Component {
     render() {
         return (
             <>
-                <WelcomeScreen />
+                <WelcomeScreen time={7} error={4}/>
             </>
         )
     }
