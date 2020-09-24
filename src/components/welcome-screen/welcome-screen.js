@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types';
 import logo from '../../assets/img/melody-logo.png'
 
-export default class extends Component {
+export default class App extends Component {
     render() {
         const { time, error } = this.props;
         return (
@@ -20,4 +21,9 @@ export default class extends Component {
             </section>
         )
     }
+}
+
+App.propTypes = {
+    time: PropTypes.number.isRequired,
+    error: PropTypes.number.isRequired
 }
