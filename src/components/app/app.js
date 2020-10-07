@@ -5,7 +5,7 @@ export default class extends Component {
     render() {
         return (
             <>
-                <WelcomeScreen time={7} error={4}/>
+                <WelcomeScreen time={7} error={4} onClick={() => { return 1}}/>
             </>
         )
     }
