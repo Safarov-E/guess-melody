@@ -1,2 +1,2 @@
-import WelcomeScreen from './welcome-screen';
-export default WelcomeScreen;
+import ArtistQuestionScreen from './artist-question-screen';
+export default ArtistQuestionScreen;

@@ -4,13 +4,13 @@ import logo from '../../assets/img/melody-logo.png'
 
 export default class WelcomeScreen extends Component {
     render() {
-        const { time, error, onClick } = this.props;
+        const { time, error, onStartButtonClick } = this.props;
         return (
             <section className="welcome">
                 <div className="welcome__logo">
                     <img src={logo} alt="Угадай мелодию" width="186" height="83" />
                 </div>
-                <button className="welcome__button" onClick={onClick}><span className="visually-hidden">Начать игру</span></button>
+                <button className="welcome__button" onClick={onStartButtonClick}><span className="visually-hidden">Начать игру</span></button>
                 <h2 className="welcome__rules-title">Правила игры</h2>
                 <p className="welcome__text">Правила просты:</p>
                 <ul className="welcome__rules-list">
@@ -25,5 +25,6 @@ export default class WelcomeScreen extends Component {
 
 WelcomeScreen.propTypes = {
     time: PropTypes.number.isRequired,
-    error: PropTypes.number.isRequired
+    error: PropTypes.number.isRequired,
+    onStartButtonClick: PropTypes.func.isRequired
 }

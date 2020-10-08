@@ -2,59 +2,60 @@ import React, {Component} from 'react'
 
 export default class ArtistQuestionScreen extends Component {
     render() {
+        const { questions } = this.props
         return (
-            <section class="game game--artist">
-                <header class="game__header">
-                    <a class="game__back" href="#">
-                        <span class="visually-hidden">Сыграть ещё раз</span>
-                        <img class="game__logo" src="img/melody-logo-ginger.png" alt="Угадай мелодию" />
+            <section className="game game--artist">
+                <header className="game__header">
+                    <a className="game__back" href="#">
+                        <span className="visually-hidden">Сыграть ещё раз</span>
+                        <img className="game__logo" src="img/melody-logo-ginger.png" alt="Угадай мелодию" />
                     </a>
 
-                    <div class="timer__value">
-                        <span class="timer__mins">05</span>
-                        <span class="timer__dots">:</span>
-                        <span class="timer__secs">00</span>
+                    <div className="timer__value">
+                        <span className="timer__mins">05</span>
+                        <span className="timer__dots">:</span>
+                        <span className="timer__secs">00</span>
                     </div>
 
-                    <div class="game__mistakes">
-                        <div class="wrong"></div>
-                        <div class="wrong"></div>
-                        <div class="wrong"></div>
+                    <div className="game__mistakes">
+                        <div className="wrong"></div>
+                        <div className="wrong"></div>
+                        <div className="wrong"></div>
                     </div>
                 </header>
 
-                <section class="game__screen">
-                    <h2 class="game__title">Кто исполняет эту песню?</h2>
-                    <div class="game__track">
-                        <div class="track">
-                            <button class="track__button track__button--play" type="button" />
-                            <div class="track__status">
+                <section className="game__screen">
+                    <h2 className="game__title">Кто исполняет эту песню?</h2>
+                    <div className="game__track">
+                        <div className="track">
+                            <button className="track__button track__button--play" type="button" />
+                            <div className="track__status">
                                 <audio />
                             </div>
                         </div>
                     </div>
 
-                    <form class="game__artist">
-                        <div class="artist">
-                            <input class="artist__input visually-hidden" type="radio" name="answer" value="artist-1" id="answer-1" />
-                            <label class="artist__name" for="answer-1">
-                            <img class="artist__picture" src="http://placehold.it/134x134" alt="Пелагея" />
+                    <form className="game__artist">
+                        <div className="artist">
+                            <input className="artist__input visually-hidden" type="radio" name="answer" value="artist-1" id="answer-1" />
+                            <label className="artist__name" htmlFor="answer-1">
+                            <img className="artist__picture" src="http://placehold.it/134x134" alt="Пелагея" />
                             Пелагея
                             </label>
                         </div>
 
-                        <div class="artist">
-                            <input class="artist__input visually-hidden" type="radio" name="answer" value="artist-2" id="answer-2" />
-                            <label class="artist__name" for="answer-2">
-                            <img class="artist__picture" src="http://placehold.it/134x134" alt="Пелагея" />
+                        <div className="artist">
+                            <input className="artist__input visually-hidden" type="radio" name="answer" value="artist-2" id="answer-2" />
+                            <label className="artist__name" htmlFor="answer-2">
+                            <img className="artist__picture" src="http://placehold.it/134x134" alt="Пелагея" />
                             Краснознаменная дивизия имени моей бабушки
                             </label>
                         </div>
 
-                        <div class="artist">
-                            <input class="artist__input visually-hidden" type="radio" name="answer" value="artist-3" id="answer-3" />
-                            <label class="artist__name" for="answer-3">
-                            <img class="artist__picture" src="http://placehold.it/134x134" alt="Пелагея" />
+                        <div className="artist">
+                            <input className="artist__input visually-hidden" type="radio" name="answer" value="artist-3" id="answer-3" />
+                            <label className="artist__name" htmlFor="answer-3">
+                            <img className="artist__picture" src="http://placehold.it/134x134" alt="Пелагея" />
                             Lorde
                             </label>
                         </div>
