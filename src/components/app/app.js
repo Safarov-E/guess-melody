@@ -15,18 +15,31 @@ export default class App extends Component {
             />
         }
         const {questions} = props;
-        return <div>
-            <GenreQuestionScreen questions={questions[question]} onStartButtonClick={this.onStartButtonClick} />
-        </div>
+        const currentQuestion = questions[question]
+        switch(currentQuestion.type) {
+            case 'genre': return <GenreQuestionScreen 
+                questions={currentQuestion}
+                onStartButtonClick={onUserAnswer}
+            />
+            case 'artist': return <ArtistQuestionScreen 
+                questions={currentQuestion}
+                onStartButtonClick={onUserAnswer}
+            />
+        }
+        return null
     }
     state = {
         question: -1
     }
     onStartButtonClick = () => {
-        this.setState((prevState) => ({
-            ...prevState,
-            question: prevState.question + 1
-        }))
+        this.setState((prevState) => {
+            const nextIndex = prevState.question + 1;
+            const isEnd = nextIndex >= this.props.questions.length
+            return {
+                ...prevState,
+                question: !isEnd ? nextIndex : -1
+            }
+        })
     }
     render() {
         const { question } = this.state;
