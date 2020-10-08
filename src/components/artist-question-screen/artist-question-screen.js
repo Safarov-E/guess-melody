@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import melodyLogoGinger from '../../assets/img/melody-logo-ginger.png'
+import PropTypes from 'prop-types';
 
 export default class ArtistQuestionScreen extends Component {
     render() {
@@ -56,4 +57,9 @@ export default class ArtistQuestionScreen extends Component {
             </section>
         )
     }
+}
+
+ArtistQuestionScreen.propTypes = {
+    questions: PropTypes.object.isRequired,
+    onStartButtonClick: PropTypes.func.isRequired
 }
