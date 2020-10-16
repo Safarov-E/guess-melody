@@ -36,7 +36,6 @@ export default class App extends Component {
             const nextIndex = prevState.question + 1;
             const isEnd = nextIndex >= this.props.questions.length
             return {
-                ...prevState,
                 question: !isEnd ? nextIndex : -1
             }
         })
