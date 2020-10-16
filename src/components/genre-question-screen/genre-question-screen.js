@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import melodyLogoGinger from '../../assets/img/melody-logo-ginger.png'
 import PropTypes from 'prop-types';
+import AudioPlayer from '../audio-player/audio-player'
 
 export default class GenreQuestionScreen extends Component {
     render() {
@@ -36,10 +37,10 @@ export default class GenreQuestionScreen extends Component {
                     {answers.map((it, i) => {
                         return (
                             <div key={`answer-${i}`} className="track">
-                                <button className="track__button track__button--play" type="button"></button>
-                                <div className="track__status">
-                                    <audio src={it.src} />
-                                </div>
+                                <AudioPlayer
+                                    isPlaying={i === 0}
+                                    src={it.src}
+                                />
                                 <div className="game__answer">
                                     <input className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${i}`} id={`answer-${i}`} />
                                     <label className="game__check" htmlFor={`answer-${i}`}>Отметить</label>
