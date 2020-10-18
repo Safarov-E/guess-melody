@@ -3,10 +3,9 @@ import React, {Component} from 'react'
 export default class AudioPlayer extends Component {
     constructor(props) {
         super(props)
-        const {isPlaying} = props;
         this.state = {
             isLoading: true,
-            isPlaying
+            isPlaying: props.isPlaying
         }
         this._audioRef = React.createRef();
     }
@@ -48,6 +47,8 @@ export default class AudioPlayer extends Component {
     }
     render() {
         const { isLoading, isPlaying } = this.state;
+        console.log('state', this.state.isPlaying)
+        console.log('props', this.props.isPlaying)
         return (
             <>
                 <button 

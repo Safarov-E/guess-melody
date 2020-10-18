@@ -4,19 +4,19 @@ const questions = [
         genre: 'rock',
         answers: [
             {
-                src: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Largo_spiccato_Vivaldi_BWV596.ogg',
+                src: 'https://cdn3.sefon.pro/files/prev/70/AC-DC%20-%20Thunderstruck%20%28192kbps%29.mp3',
                 genre: 'rock'
             },
             {
-                src: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Largo_spiccato_Vivaldi_BWV596.ogg',
+                src: 'https://cdn3.sefon.pro/files/prev/70/AC-DC%20-%20Highway%20To%20Hell%20%28192kbps%29.mp3',
                 genre: 'pop'
             },
             {
-                src: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Largo_spiccato_Vivaldi_BWV596.ogg',
+                src: 'https://cdn7.sefon.pro/files/prev/191/Pain%20-%20Shut%20Your%20Mouth%20%28192kbps%29.mp3',
                 genre: 'jazz'
             },
             {
-                src: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Largo_spiccato_Vivaldi_BWV596.ogg',
+                src: 'https://cdn7.sefon.pro/files/prev/103/Skillet%20-%20Awake%20and%20Alive%20%28192kbps%29.mp3',
                 genre: 'rock'
             }
         ]
@@ -25,7 +25,7 @@ const questions = [
         type: 'artist',
         song: {
             artist: 'Jim Beam',
-            src: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Largo_spiccato_Vivaldi_BWV596.ogg',
+            src: 'https://cdn5.sefon.pro/files/prev/85/Sabaton%20-%20Primo%20Victoria%20%28192kbps%29.mp3',
         },
         answers: [
             {

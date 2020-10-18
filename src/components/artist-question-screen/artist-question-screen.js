@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import melodyLogoGinger from '../../assets/img/melody-logo-ginger.png'
 import PropTypes from 'prop-types';
+import AudioPlayer from '../audio-player/audio-player'
 
 export default class ArtistQuestionScreen extends Component {
     render() {
@@ -31,10 +32,10 @@ export default class ArtistQuestionScreen extends Component {
                     <h2 className="game__title">Кто исполняет эту песню?</h2>
                     <div className="game__track">
                         <div className="track">
-                            <button className="track__button track__button--play" type="button" />
-                            <div className="track__status">
-                                <audio />
-                            </div>
+                            <AudioPlayer
+                                isPlaying={true}
+                                src={questions.song.src}
+                            />
                         </div>
                     </div>
 

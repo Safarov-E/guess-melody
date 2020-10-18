@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import AudioPlayer from '../audio-player/audio-player'
 
 export default class GenreQuestionScreen extends Component {
+    state = {
+        activePlayer: -1
+    }
     render() {
         const { questions, onStartButtonClick } = this.props
         const { answers, genre } = questions
