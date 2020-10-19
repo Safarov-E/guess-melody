@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types';
 
 export default class AudioPlayer extends Component {
     constructor(props) {
@@ -28,7 +29,6 @@ export default class AudioPlayer extends Component {
     }
     componentDidUpdate() {
         const audio = this._audioRef.current;
-
         if(this.state.isPlaying) {
             audio.play()
         } else {
@@ -47,10 +47,8 @@ export default class AudioPlayer extends Component {
     }
     render() {
         const { isLoading, isPlaying } = this.state;
-        console.log('state', this.state.isPlaying)
-        console.log('props', this.props.isPlaying)
         return (
-            <>
+            <React.Fragment>
                 <button 
                     className={`track__button track__button--${isPlaying ? 'pause' : 'play'}`}
                     type="button"
@@ -60,7 +58,12 @@ export default class AudioPlayer extends Component {
                 <div className="track__status">
                     <audio ref={this._audioRef}/>
                 </div>
-            </>
+            </React.Fragment>
         )
     }
+}
+
+AudioPlayer.propTypes = {
+    src: PropTypes.string.isRequired,
+    isPlaying: PropTypes.bool.isRequired
 }

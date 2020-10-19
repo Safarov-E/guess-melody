@@ -6,7 +6,7 @@ import AudioPlayer from '../audio-player/audio-player'
 export default class ArtistQuestionScreen extends Component {
     render() {
         const { questions, onStartButtonClick } = this.props
-        const { answers } = questions
+        const { answers, song } = questions
         return (
             <section className="game game--artist">
                 <header className="game__header">
@@ -34,7 +34,7 @@ export default class ArtistQuestionScreen extends Component {
                         <div className="track">
                             <AudioPlayer
                                 isPlaying={true}
-                                src={questions.song.src}
+                                src={song.src}
                             />
                         </div>
                     </div>
