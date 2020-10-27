@@ -26,5 +26,5 @@ export default class WelcomeScreen extends Component {
 WelcomeScreen.propTypes = {
     time: PropTypes.number.isRequired,
     error: PropTypes.number.isRequired,
-    onStartButtonClick: PropTypes.func.isRequired
+    onStartButtonClick: PropTypes.func
 }

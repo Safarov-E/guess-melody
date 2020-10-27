@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import AudioPlayer from '../audio-player/audio-player'
 
 export default class GenreQuestionScreen extends Component {
+    state = {
+        userAnswer: new Array(this.props.questions.answers.length).fill(false)
+    }
     render() {
         const { questions, onStartButtonClick } = this.props
         const { answers, genre } = questions
@@ -40,6 +43,7 @@ export default class GenreQuestionScreen extends Component {
                                 <AudioPlayer
                                     isPlaying={i === 0}
                                     src={it.src}
+                                    id={i}
                                 />
                                 <div className="game__answer">
                                     <input className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${i}`} id={`answer-${i}`} />

@@ -13,8 +13,7 @@ export default class AudioPlayer extends Component {
     componentDidMount() {
         const {src} = this.props;
         const audio = this._audioRef.current;
-        audio.src = src;
-
+        audio.src = src; 
         audio.oncanplaythrough = () => this.setState({
             isLoading: false
         })
@@ -64,6 +63,6 @@ export default class AudioPlayer extends Component {
 }
 
 AudioPlayer.propTypes = {
-    src: PropTypes.string.isRequired,
+    src: PropTypes.string,
     isPlaying: PropTypes.bool.isRequired
 }
