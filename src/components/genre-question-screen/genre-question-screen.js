@@ -46,7 +46,9 @@ export default class GenreQuestionScreen extends Component {
                                     id={i}
                                 />
                                 <div className="game__answer">
-                                    <input className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${i}`} id={`answer-${i}`} />
+                                    <input 
+                                        checked={this.state.userAnswer[i]}
+                                        className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${i}`} id={`answer-${i}`} />
                                     <label className="game__check" htmlFor={`answer-${i}`}>Отметить</label>
                                 </div>
                             </div>

@@ -1,28 +1,39 @@
 import React, {Component} from 'react'
-import WelcomeScreen from '../welcome-screen'
-import ArtistQuestionScreen from '../artist-question-screen/artist-question-screen'
-import GenreQuestionScreen from '../genre-question-screen/genre-question-screen'
+import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 
+import {ActionCreator} from '../../reducer'
+import ArtistQuestionScreen from '../artist-question-screen/artist-question-screen'
+import GenreQuestionScreen from '../genre-question-screen/genre-question-screen'
+import WelcomeScreen from '../welcome-screen'
+
+const Type = {
+    ARTIST: 'game--artist',
+    GENRE: 'game--genre'
+}
 export default class App extends Component {
-    static getScreen(question, props, onUserAnswer) {
-        if(question === -1) {
-            const {gameTime, errorCount} = props;
+    _getScreen(question) {
+        if(!question) {
+            const {maxMistakes, gameTime, onWelcomeScreenClick} = this.props;
             return <WelcomeScreen 
+                error={maxMistakes} 
                 time={gameTime} 
-                error={errorCount} 
-                onStartButtonClick={onUserAnswer} 
+                onStartButtonClick={onWelcomeScreenClick} 
             />
         }
-        const {questions} = props;
-        const currentQuestion = questions[question]
-        switch(currentQuestion.type) {
+        const {onUserAnswer, mistakes, maxMistakes} = this.props;
+        switch(question.type) {
             case 'genre': return <GenreQuestionScreen 
-                questions={currentQuestion}
-                onStartButtonClick={onUserAnswer}
+                questions={question}
+                onStartButtonClick={(userAnswer) => onUserAnswer(
+                    userAnswer,
+                    question,
+                    mistakes,
+                    maxMistakes
+                )}
             />
             case 'artist': return <ArtistQuestionScreen 
-                questions={currentQuestion}
+                questions={question}
                 onStartButtonClick={onUserAnswer}
             />
         }
