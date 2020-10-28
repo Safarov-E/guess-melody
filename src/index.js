@@ -15,6 +15,7 @@ const gmaeSettings = {
 
 const init = (gameQuestions) => {
     const {errorCount, gameTime} = gmaeSettings
+    const store = createStore(reducer)
 
     ReactDOM.render(<Provider store={store}>
             <App 
